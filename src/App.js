@@ -13,28 +13,7 @@ const App = () => {
 
   const [currentAccount, setCurrentAccount] = useState("");
 
-  const checkIfWalletIsConnected = async () => {
-    const { ethereum } = window;
-
-    if (!ethereum) {
-      alert("Please download Metamask Wallet");
-    } else {
-      console.log("Metamask detected");
-    }
-
-    const accounts = await ethereum.request({ method: 'eth_accounts' });
-
-    if (accounts.length !== 0) {
-      const account = accounts[0];
-      setCurrentAccount(account);
-      console.log("Found an authorized account:", account);
-
-      setupEventListener();
-    } else {
-      console.log("No authorized account found");
-    }
-
-  }
+  
 
   const connectWallet = async () => {
     try {
@@ -128,6 +107,30 @@ const App = () => {
   );
 
   useEffect(() => {
+    const checkIfWalletIsConnected = async () => {
+      const { ethereum } = window;
+  
+      if (!ethereum) {
+        alert("Please download Metamask Wallet");
+      } else {
+        console.log("Metamask detected");
+      }
+  
+      const accounts = await ethereum.request({ method: 'eth_accounts' });
+  
+      if (accounts.length !== 0) {
+        const account = accounts[0];
+        setCurrentAccount(account);
+        console.log("Found an authorized account:", account);
+  
+        setupEventListener();
+      } else {
+        console.log("No authorized account found");
+      }
+  
+    }
+
+
     checkIfWalletIsConnected();
   }, [])
 

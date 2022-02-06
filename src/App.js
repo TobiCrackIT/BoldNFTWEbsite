@@ -5,6 +5,9 @@ import { ethers } from 'ethers';
 
 import boldNFT from './utils/BoldNFT.json';
 
+//Website
+//https://bold-nft-website.vercel.app/
+
 // Constants
 const TWITTER_HANDLE = 'oluwasquared';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
@@ -39,7 +42,7 @@ const App = () => {
 
   // Setup our listener.
   const setupEventListener = async () => {
-    const CONTRACT_ADDRESS = "0x1EF26aCF138cB5bF046dCeFf8df999A4D7ba00B7";
+    const CONTRACT_ADDRESS = "0x16865eC9A48962DE383C52510aE72090aEA03249";
     // Most of this looks the same as our function askContractToMintNft
     try {
       const { ethereum } = window;
@@ -69,7 +72,7 @@ const App = () => {
   }
 
   const askContractToMintNFT = async () => {
-    const CONTRACT_ADDRESS = "0x1EF26aCF138cB5bF046dCeFf8df999A4D7ba00B7";
+    const CONTRACT_ADDRESS = "0x16865eC9A48962DE383C52510aE72090aEA03249";
 
 
 
